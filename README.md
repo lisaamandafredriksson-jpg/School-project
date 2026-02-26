@@ -1,5 +1,3 @@
-id="yiysc0"
-
 # 🌐 Interaktiv Webbplats – Webbutvecklingsprojekt
 
 ## 📌 Översikt
