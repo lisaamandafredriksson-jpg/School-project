@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="CSS/contact.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Kontakta Oss</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Kontaktsektion -->
+    <section class="contact-section">
+        <p>Fyll i formuläret nedan så hör vi av oss!</p>
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="6333242d-a748-4564-9e21-b153ae579a77">
+
+            <input type="text" name="name" placeholder="Namn" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Email" class="contact-inputs" required>
+            <textarea name="message" placeholder="Meddelande" class="contact-inputs" required></textarea>
+            <button type="submit">Skicka</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Lisa Website. Alla rättigheter reserverade.</p>
+    </footer>
+
+    <script src="Javascript/script.js"></script>
+</body>
+</html>
