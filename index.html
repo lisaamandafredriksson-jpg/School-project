@@ -1,41 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Project</title>
-
-<link rel="stylesheet" href="CSS/style.css">
-
-</head>
-
-<body>
-
-<div class="nav">
-
-<a href="index.html">Home</a>
-<a href="#">About Us</a>
-<a href="contact.html">Contact</a>
-
-</div>
-
-<script src="Javascript/script.js"></script>
-
-</body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
-    <link rel="stylesheet" href="Style.CSS">
+    <link rel="stylesheet" href="/CSS/style.css">
+    
 </head>
 <body>
-    <div class="nav">
-    <a href="g">Home</a>
-    <a href="g">About Us</a>
-    <a href="g">Contact</a>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
+            <img src="/images/loga.png" alt="Logo" class="navbar__logo-img">Projekt (Grupparbete)</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">Tech</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">Products</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">AboutUs</a>
+            </li>
+            <li class="navbar__btn">
+                <a href="/contact.html" class="button">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+     
+    <!-- Framsidan -->
+
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>NEXT GENERATION</h1>
+                <h2>TECHNOLOGY</h2>
+                <p>Look in too the future</p>
+                <button class="main__btn"><a href="/">Get Started</a></button>
+            </div>
+            <div class="main__img--container">
+                <img src="/images/undraw_visionary-technology_f6b3-Photoroom.png" alt="" id="main__img">
+            </div>
+        </div>
     </div>
+
+
+    <!-- Footer -->
+
+    <div class="footer__container">
+        <div class="footer__links">
+            <div class="footer__link--wrapper">
+                <div class="footer__link--items">
+                    <h2>About Us</h2>
+                    <a href="/">How it works</a>
+                    <a href="/">Careers</a>
+                </div>    
+            </div>
+                
+            <div class="footer__link--wrapper">
+                 <div class="footer__link--items">
+                    <h2>Contact</h2>
+                    <a href="/contact.html">Contact Us</a>
+                    <br></br>
+                    <a href="">Adress</a>
+                    <p>
+                        Street Address: U.S. Capitol Building, East Capitol St NE
+                        State: DC
+                        City: Washington
+                        Post Code: 20003
+                    </p>
+                </div>    
+            </div>
+               
+            <div class="footer__link--wrapper">
+                 <div class="footer__link--items">
+                    <a href="/">Terms of Service</a>
+                </div>
+            </div>
+
+                </div>
+            </div>
+        </div>   
+    </div> 
+
+<footer>
+    <small>
+      &copy; 2026  Website. Alla rättigheter reserverade.
+    </small>
+</footer>    
+    <script src="/Javascript/script.js"></script>
 </body>
 </html>
