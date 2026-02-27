@@ -70,5 +70,27 @@
         <p>&copy; 2026 Website. Alla rättigheter reserverade.</p>
     </footer>
 
+
+
+        <!-- Chatbot -->
+
+<div id="chat-wrapper">
+    <div id="chat-window" class="hidden">
+        <div id="chat-header">
+            <span>AI Assistent</span>
+            <button onclick="toggleChat()">✖</button>
+        </div>
+        <div id="chat-messages">
+            <p class="bot-msg">Hej! Hur kan jag hjälpa dig idag?</p>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="user-input" placeholder="Skriv något...">
+            <button id="send-btn">Skicka</button>
+        </div>
+    </div>
+
+    <button id="chat-button" onclick="toggleChat()">💬</button>
+</div>
+
 </body>
 </html>
