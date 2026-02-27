@@ -24,6 +24,11 @@ menu.addEventListener('click', function() {
 
 
 
+
+
+// AI Chatbot
+
+
 // Funktion för att visa/dölja chatten
 function toggleChat() {
     const chatWindow = document.getElementById('chat-window');
