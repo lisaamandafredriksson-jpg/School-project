@@ -27,7 +27,7 @@
     display: flex;
     justify-content: space-between;
     height: 80px;
-    z-index: 1;
+    z-index: 1; /* Gör a navbaren allti ligger överst */
     width: 100%;
     max-width: 1300px; /* Begränsar menyns maxbredd på störe skärmar */
     margin: 0 auto;  /* 0 bestämmer uppe och nere, 'auto' sätter höger och vänster */
@@ -50,15 +50,12 @@
     font-size: 2rem;
 }  
 
-.fa-gem {
-    margin-right: 0.5rem; /* skappar ett litet mellanrum mellan ikonen och texten */
-}
 
 .navbar__menu {
-    display: flex;
-    align-items: center;
-    list-style: none; 
-    text-align: center;
+    display: flex; /* gör att menyns innehåll ligger i en rad */
+    align-items: center; /* Vertikal centrering av menyns innehåll */
+    list-style: none;  /* Tar bort punkterna från listan */
+    text-align: center; /* Centrerar texten i menyn */
 }
 
 .navbar__item {
@@ -178,6 +175,122 @@
     text-decoration: none;
 }
 
+
+/* About us */
+
+.about {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2.5rem;
+    padding : 20px;
+    color: #f77062;
+}
+
+.about__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+
+
+/* Services */
+
+
+.services {
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 80px;
+}
+
+.services h1 {
+    background-color: #ff8177;
+    background-image: linear-gradient(
+        to right,
+        #ff8177 0%,
+        #ff867a 0%,
+        #ff8c7f 21%,
+        #f99185 52%,
+        #fbc490 78%,
+        #fdbb7d 100%
+    );
+    background-size: 100%;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.services__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.services__card {
+    margin: 1rem;
+    height: 525px;
+    width: 400px;
+    border-radius: 4px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17, 17, 17, 17) 100%
+    ),
+    url(/images/TECH.gif);
+    background-size: cover;
+    position: relative;
+    color: #ffff;
+}
+
+
+.services__card:nth-child(2) {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(17, 17, 17, 17) 100%
+    ),
+    url(/images/AI.gif);
+}
+
+.services h2 {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+}
+
+.services__card p {
+    position: absolute;
+    top: 400px;
+    left: 30px;
+}
+
+.services__card button {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #f77062;
+    position: absolute;
+    top: 450px;
+    left: 30px;
+    font-size: 1rem;;
+}
+
+.services__card:hover {
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
 
 
 /* Footer */
@@ -364,3 +477,67 @@ footer {
         margin: 10px auto;
     }
 }
+
+
+
+
+/* Chat Bot */
+
+
+/* Placerar allt i nedre högra hörnet */
+#chat-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+}
+
+/* Design för själva knappen */
+#chat-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fe5196;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Design för fönstret */
+#chat-window {
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#chat-header {
+    background: #fe5196;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bot-msg { background: #f1f1f1; padding: 8px; border-radius: 5px; align-self: flex-start; }
+.user-msg { background: #fe5196; color: white; padding: 8px; border-radius: 5px; align-self: flex-end; }
+
+/* En klass för att dölja fönstret */
+.hidden { display: none !important; }

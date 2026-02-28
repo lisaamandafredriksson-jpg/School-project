@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
     <link rel="stylesheet" href="/CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar">
@@ -21,20 +22,83 @@
                 <a href="/" class="navbar__links">Home</a>
             </li>
             <li class="navbar__item">
-                <a href="/" class="navbar__links">Tech</a>
+                <a href="/products.html" class="navbar__links">Products</a>
             </li>
             <li class="navbar__item">
-                <a href="/" class="navbar__links">Products</a>
-            </li>
-            <li class="navbar__item">
-                <a href="/about.html" class="navbar__links">AboutUs</a>
+                <a href="/about.html" class="navbar__links">About Us</a>
             </li>
             <li class="navbar__btn">
                 <a href="/contact.html" class="button">Contact Us</a>
             </li>
         </ul>
     </nav>
+
+<main>
+    <h1 class="about">Morgondagens teknologi idag</h1>
+    <div class="about__container">
+        <p>Vi är ett företag som fokuserar på att utveckla och implementera banbrytande teknologiska lösningar för att forma framtiden. Vårt mål är att skapa innovativa produkter och tjänster som förbättrar människors liv och driver samhället framåt.</p>
+        <p>Vi strävar efter att vara ledande inom teknologisk innovation och arbetar ständigt med att utforska nya idéer och koncept. Genom att kombinera kreativitet, expertis och avancerad teknik, skapar vi lösningar som inte bara är effektiva utan också hållbara och användarvänliga.</p>
+        <p>Vårt team består av passionerade och dedikerade individer som delar en gemensam vision om att forma en bättre framtid genom teknologi. Vi tror på kraften i samarbete och innovation, och vi är engagerade i att göra en positiv skillnad i världen genom våra produkter och tjänster.</p>   
+    </div>
+
+    <h1 class="about">Vår vision</h1>
+    <div class="about__container">
+        <p>Vår vision är att vara en global ledare inom teknologisk innovation och att forma framtiden genom banbrytande lösningar. Vi strävar efter att skapa en värld där teknologi inte bara förbättrar människors liv utan också främjar hållbarhet, inkludering och socialt ansvar.</p>
+        <p>Vi ser en framtid där våra produkter och tjänster inte bara är effektiva och användarvänliga, utan också bidrar till att lösa globala utmaningar och skapa en bättre värld för kommande generationer. Genom att driva innovation och samarbeta med likasinnade partners, strävar vi efter att göra vår vision till verklighet.</p>
+    </div>
+    
+    <h1 class="about">Våra värderingar</h1>
+    <div class="about__container">
+        <p>Innovation: Vi strävar efter att ständigt tänja på gränserna för vad som är möjligt och att skapa banbrytande lösningar som driver teknologisk utveckling framåt.</p>
+        <p>Hållbarhet: Vi är engagerade i att skapa produkter och tjänster som inte bara är effektiva utan också hållbara och miljövänliga, för att bidra till en bättre framtid för vår planet.</p>
+        <p>Inkludering: Vi tror på kraften i mångfald och inkludering, och vi strävar efter att skapa en arbetsmiljö där alla känner sig välkomna, respekterade och värderade.</p>
+        <p>Socialt ansvar: Vi är dedikerade till att göra en positiv skillnad i världen genom våra produkter, tjänster och samhällsengagemang, och vi strävar efter att vara en kraft för gott i samhället.</p>
+    </div>
+
+    <h1 class="about">Vårt team</h1>
+    <div class="about__container">
+        <p>Vårt team består av passionerade och dedikerade individer som delar en gemensam vision om att forma en bättre framtid genom teknologi. Vi har samlat experter inom olika områden, inklusive teknik, design, marknadsföring och affärsutveckling, för att skapa en mångsidig och dynamisk arbetsmiljö.</p>
+        <p>Vi tror på kraften i samarbete och innovation, och vi uppmuntrar våra teammedlemmar att tänka kreativt, utmana konventionella idéer och arbeta tillsammans för att skapa banbrytande lösningar. Genom att kombinera vår expertis och passion, strävar vi efter att göra en positiv skillnad i världen genom våra produkter och tjänster.</p>
+    </div>
+
+    <h1 class="about">Vårt engagemang för hållbarhet</h1>
+    <div class="about__container">
+        <p>Vi är djupt engagerade i att skapa en hållbar framtid genom våra produkter, tjänster och affärsmetoder. Vi strävar efter att minimera vår miljöpåverkan genom att använda hållbara material, energieffektiva processer och att främja återvinning och återanvändning.</p>
+        <p>Vi tror att teknologi kan vara en kraft för gott när den används på ett ansvarsfullt sätt, och vi är dedikerade till att utveckla lösningar som inte bara är innovativa utan också hållbara och miljövänliga. Genom att arbeta tillsammans med våra partners, kunder och samhällen, strävar vi efter att göra en positiv skillnad i världen och bidra till en mer hållbar framtid för alla.</p>
+    </div>
+
+    <h1 class="about">Vår framtid</h1>
+    <div class="about__container">
+        <p>Vi ser en spännande framtid framför oss, där vi fortsätter att driva innovation och skapa banbrytande lösningar som formar framtiden. Vi är engagerade i att utforska nya idéer, teknologier och marknader för att fortsätta växa och utvecklas som företag.</p>
+        <p>Vår vision är att vara en global ledare inom teknologisk innovation, och vi strävar efter att göra vår vision till verklighet genom att fortsätta skapa produkter och tjänster som förbättrar människors liv och driver samhället framåt. Vi ser fram emot att fortsätta vår resa mot en bättre framtid tillsammans med våra kunder, partners och samhällen.</p>
+    </div>
+</main>
+
     
     <script src="/Javascript/script.js"></script>
+
+
+
+
+    <!-- Chatbot -->
+
+<div id="chat-wrapper">
+    <div id="chat-window" class="hidden">
+        <div id="chat-header">
+            <span>AI Assistent</span>
+            <button onclick="toggleChat()">❌</button>
+        </div>
+        <div id="chat-messages">
+            <p class="bot-msg">Hej! Hur kan jag hjälpa dig idag?</p>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="user-input" placeholder="Skriv något...">
+            <button type="button" class="btn btn-outline-danger">Send</button>
+        </div>
+    </div>
+
+    <button id="chat-button" onclick="toggleChat()">💬</button>
+</div>
+
 </body>
 </html>
