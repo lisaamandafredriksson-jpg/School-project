@@ -1,93 +1,278 @@
-/* Grundinställningar */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f7fa; 
+/* ==========================
+   GRUNDINSTÄLLNINGAR
+========================== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header */
+body {
+    font-family: "Kumbh Sans", sans-serif;
+    background-color: #131313; /* mörkt som standard */
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+/* Bakgrundsbild med mörk overlay */
+body.contact-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/undraw_visionary-technology_f6b3-Photoroom.png');
+    background-size: 30%;
+    background-position: left 120px;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.6); /* mörk overlay */
+    background-blend-mode: darken;
+    z-index: -1; /* ligger bakom allt innehåll */
+}
+
+/* ==========================
+   HEADER
+========================== */
 header {
-    background-color: #0288d1; 
+    background-color: #1e1e1e;
     padding: 20px;
     text-align: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 header h1 {
-    color: #ffffff; 
+    font-size: 2.5rem;
+    background-image: linear-gradient(90deg, #f77062, #fe5196);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
-/* Navigation */
+/* ==========================
+   NAVIGATION
+========================== */
 nav {
-    background-color: #01579b; 
+    background-color: #1e1e1e;
     text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 nav a {
-    color: #ffffff; 
+    color: #fff;
     text-decoration: none;
     padding: 10px 15px;
     display: inline-block;
+    font-weight: bold;
 }
 
 nav a:hover {
-    background-color: #4dd0e1; /* ljusare blå när man hovrar */
-    color: black;
+    color: #f77062;
 }
 
-/* Kontaktformulär */
+/* ==========================
+   CONTACT FORM
+========================== */
 .contact-section {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #b2ebf2; 
-    border-radius: 10px;
+    width: 65%;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    padding: 25px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    color: #fff;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .contact-inputs {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #0288d1; /* blå kant  */
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    font-size: 16px;
+    outline: none;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.contact-inputs::placeholder {
+    color: #ccc;
+}
+
+.contact-inputs:focus {
+    border: 2px solid #f77062;
 }
 
 .contact-form button {
-    padding: 10px;
+    padding: 14px 25px;
     border: none;
-    background-color: #00796b; 
-    color: white;
+    border-radius: 8px;
+    background-image: linear-gradient(90deg, #f77062, #fe5196);
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
+    transition: 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #004d40; /* mörkare grön när man hovrar */
+    opacity: 0.85;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    background-color: #0288d1; 
-    color: white;
+/* Success message */
+.success-message {
+    display: none;
+    margin-top: 15px;
+    color: #21d4fd;
+    font-weight: bold;
+}
+
+/* ==========================
+   FAQ
+========================== */
+.faq {
+    width: 65%;
+    margin: 40px auto;
+}
+
+.faq-item {
+    background-color: #1e1e1e;
     padding: 15px;
-    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    color: #fff;
 }
 
-/* Responsiv design */
+.faq-item h4 {
+    color: #fff;
+}
+
+.faq-item p {
+    display: none;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.faq-item.active p {
+    display: block;
+}
+
+/* ==========================
+   MAP
+========================== */
+.map-section {
+    width: 65%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+@media (max-width: 960px) {
+    body.contact-page::before {
+        background-size: 50%;
+        background-position: center 150px;
+    }
+
+    .contact-section,
+    .faq,
+    .map-section {
+        width: 90%;
+    }
+}
+
 @media (max-width: 600px) {
     nav a {
         display: block;
         padding: 10px;
     }
 
-    .contact-section {
-        width: 90%;
-        margin: 10px auto;
+    body.contact-page::before {
+        background-image: none; /* döljer bild på små skärmar */
     }
 }
+
+
+/* Chat Bot */
+
+
+/* Placerar allt i nedre högra hörnet */
+#chat-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+}
+
+/* Design för själva knappen */
+#chat-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fe5196;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Design för fönstret */
+#chat-window {
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#chat-header {
+    background: #fe5196;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bot-msg { background: #f1f1f1; padding: 8px; border-radius: 5px; align-self: flex-start; }
+.user-msg { background: #fe5196; color: white; padding: 8px; border-radius: 5px; align-self: flex-end; }
+
+/* En klass för att dölja fönstret */
+.hidden { display: none !important; }

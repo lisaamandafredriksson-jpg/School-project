@@ -1,39 +1,95 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact Us</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="CSS/contact.css">
-    <link rel="stylesheet" href="https://www.hiclipart.com/free-transparent-background-png-clipart-yvehq">
-    <header>
-        <h1>Kontakta Oss</h1>
-    </header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#">About Us</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <!-- Bootstrap (optional for layout) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="contact-page dark-mode">
 
-    <!-- Kontaktsektion -->
-    <section class="contact-section">
-        <p>Fyll i formuläret nedan så hör vi av oss!</p>
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-            <input type="hidden" name="access_key" value="6333242d-a748-4564-9e21-b153ae579a77">
+<header>
+    <h1>Contact Us</h1>
+</header>
 
-            <input type="text" name="name" placeholder="Namn" class="contact-inputs" required>
-            <input type="email" name="email" placeholder="Email" class="contact-inputs" required>
-            <textarea name="message" placeholder="Meddelande" class="contact-inputs" required></textarea>
-            <button type="submit">Skicka</button>
-        </form>
-    </section>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="#">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Lisa Website. Alla rättigheter reserverade.</p>
-    </footer>
+<!-- Contact Form Section -->
+<section class="contact-section">
+    <p>Fill in the form below and we'll get back to you!</p>
 
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+
+        <input type="text" name="name" placeholder="Name" class="contact-inputs" required>
+        <input type="email" name="email" placeholder="Email" class="contact-inputs" required>
+        <textarea name="message" placeholder="Message (minimum 10 characters)" class="contact-inputs" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+
+    <p id="successMessage" class="success-message">Thank you! Your message has been sent 🎉</p>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <h4>How long is your response time?</h4>
+        <p>We respond within 24 hours.</p>
+    </div>
+    <div class="faq-item">
+        <h4>Where are you located?</h4>
+        <p>We are based in Sweden.</p>
+    </div>
+</section>
+
+<!-- Google Maps Section -->
+<section class="map-section">
+    <h2>Find Us</h2>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18..." 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</section>
+
+<footer>
+    <p>&copy; 2026 Website. All rights reserved.</p>
+</footer>
+<!-- Chatbot -->
+
+<div id="chat-wrapper">
+    <div id="chat-window" class="hidden">
+        <div id="chat-header">
+            <span>AI Assistent</span>
+            <button onclick="toggleChat()">❌</button>
+        </div>
+        <div id="chat-messages">
+            <p class="bot-msg">Hej! Hur kan jag hjälpa dig idag?</p>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="user-input" placeholder="Skriv något...">
+            <button type="button" class="btn btn-outline-danger">Send</button>
+        </div>
+    </div>
+
+    <button id="chat-button" onclick="toggleChat()">💬</button>
+</div>
+
+<!-- JS -->
+<script src="JS/contact.js"></script>
 </body>
 </html>
