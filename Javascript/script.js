@@ -1,36 +1,41 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Contact form validation
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("successMessage");
 
-    const form = document.querySelector(".contact-form");
+    if (form) {
+        form.addEventListener("submit", function(e) {
+            const message = form.querySelector("textarea").value;
+            if (message.length < 10) {
+                alert("Message must be at least 10 characters long.");
+                e.preventDefault();
+            } else {
+                successMessage.style.display = "block";
+            }
+        });
+    }
 
-    form.addEventListener("submit", function() {
-
-        alert("Tack! Ditt meddelande har skickats.");
-
+    // FAQ toggle
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+        item.addEventListener("click", function() {
+            item.classList.toggle("active");
+        });
     });
 
+    // Chat toggle
+    const chatButton = document.getElementById("chat-button");
+    const chatWindow = document.getElementById("chat-window");
+
+    function toggleChat() {
+        chatWindow.classList.toggle("hidden");
+    }
+
+    if (chatButton) {
+        chatButton.addEventListener("click", toggleChat);
+    }
+    if (document.getElementById("chat-header").querySelector("button")) {
+        document.getElementById("chat-header").querySelector("button")
+            .addEventListener("click", toggleChat);
+    }
 });
-
-
-
-// Navigeringsmenyn för mobilversion
-
-const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.navbar__menu');
-
-menu.addEventListener('click', function() {
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
-});
-
-
-
-
-
-// AI Chatbot
-
-
-// Funktion för att visa/dölja chatten
-function toggleChat() {
-    const chatWindow = document.getElementById('chat-window');
-    chatWindow.classList.toggle('hidden');
-}
