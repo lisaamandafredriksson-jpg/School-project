@@ -44,6 +44,31 @@ body.about-page::before {
     pointer-events: none;
 }
 
+/* About-knappen – liten och centrerad */
+.aboutButton {
+    text-align: center;   /* centrerar knappen */
+    margin: 30px 0;
+}
+
+.aboutButton .button {
+    display: inline-block;      /* gör knappen kompakt, ej fullbredd */
+    padding: 8px 20px;          /* mindre höjd och bredd */
+    font-size: 1rem;            /* normal textstorlek */
+    border-radius: 5px;         /* rundade hörn */
+    background-color: #f77062;  /* matchande standardfärg */
+    color: #fff;
+    width: auto;                /* se till att bredden anpassas efter innehållet */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover-effekt */
+.aboutButton .button:hover {
+    background-color: #ffb199; /* matchande ljusare ton */
+    color: #fff;
+    transform: scale(1.05);
+}
+
 /* HUVUDMENY  */
 
 
@@ -216,9 +241,9 @@ body.about-page::before {
 
 .about {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
     font-size: 2.5rem;
-    padding : 20px;
+    padding : 5px;
     color: #f77062;
 }
 
@@ -226,8 +251,8 @@ body.about-page::before {
 
 .about__container {
     max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
+    margin: 20px auto;
+    padding: 20px;
 
     font-size: 1.2rem;
     line-height: 1.6;
