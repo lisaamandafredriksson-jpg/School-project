@@ -40,6 +40,40 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Chat send message
+const sendBtn = document.querySelector("#chat-input-area button");
+const userInput = document.getElementById("user-input");
+const chatMessages = document.getElementById("chat-messages");
+
+if (sendBtn) {
+    sendBtn.addEventListener("click", sendMessage);
+}
+
+function sendMessage() {
+
+    const message = userInput.value.trim();
+
+    if (message === "") return;
+
+    // User message
+    const userMsg = document.createElement("p");
+    userMsg.classList.add("user-msg");
+    userMsg.textContent = message;
+    chatMessages.appendChild(userMsg);
+
+    // Simple bot reply
+    const botMsg = document.createElement("p");
+    botMsg.classList.add("bot-msg");
+    botMsg.textContent = "Tack för ditt meddelande! Vi återkommer snart.";
+    
+    setTimeout(() => {
+        chatMessages.appendChild(botMsg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 500);
+
+    userInput.value = "";
+}
+
 // Hamburger toggle
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
@@ -49,3 +83,12 @@ if (hamburger) {
         navMenu.classList.toggle("active");
     });
 }
+
+// Hamburger menu
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('#nav-menu');
+
+menu.addEventListener('click', function () {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+});
