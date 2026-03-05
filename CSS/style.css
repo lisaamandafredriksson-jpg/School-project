@@ -600,22 +600,24 @@ footer
     padding: 0; /* Tar bort padding på mobilversion */
 }
 
-    .navbar__menu {
-        display: grid;
-        grid-template-columns: auto; /* lägger länkarna i colum */
-        margin: 0;
-        width: 100%;
-        position: absolute; /* lägger navbar utabfor skärmen när inte aktiv */
-        top: -1000px; /* döljer menyn ovanför skärmen */
-        opacity: 0; 
-        transition: all 0.5s ease; /* Mjuk övergång när menyn öppnas */
-        height: 50vh; /* halva skärm höjd  */
-        z-index: -1; /* ligger bakom när inte aktiv */
-        background: #131313;
-    }
+.navbar__menu 
+{
+    display: grid;
+    grid-template-columns: auto; /* lägger länkarna i colum */
+    margin: 0;
+    width: 100%;
+    position: absolute; /* lägger navbar utabfor skärmen när inte aktiv */
+    top: -1000px; /* döljer menyn ovanför skärmen */
+    opacity: 0; 
+    transition: all 0.5s ease; /* Mjuk övergång när menyn öppnas */
+    height: 50vh; /* halva skärm höjd  */
+    z-index: -1; /* ligger bakom när inte aktiv */
+    background: #131313;
+}
 
-    /* Navigeringsmeny när den är aktiv (öppen) */
-.navbar__menu.active {
+/* Navigeringsmeny när den är aktiv (öppen) */
+.navbar__menu.active 
+{
     background: #131313;
     top: 100%; 
     opacity: 1; /* Gör så den blir synlig*/
