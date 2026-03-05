@@ -5,8 +5,44 @@
     margin: 0;
     padding: 0;
     font-family: "Kumbh Sans", sans-serif;
+    
 }
 
+/* GRUNDINSTÄLLNINGAR */
+
+* {
+    box-sizing: border-box; /* Gör att padding och border räknas in i elementets totala bredd/höjd */
+    margin: 0; /* Tar bort standardmarginaler från webbläsaren */
+    padding: 0; /* Tar bort standardpadding från webbläsaren */
+    font-family: "Kumbh Sans", sans-serif; /* Sätter standardfont för hela sidan */
+}
+
+
+/* BAKGRUNDSBILD MED MÖRK TRANSPARENT "SLÖJA" */
+
+/* ABOUT PAGE BAKGRUND */
+
+body.about-page {
+    position: relative;
+    min-height: 100vh;
+}
+
+body.about-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("/images/undraw_visionary-technology_f6b3-Photoroom.png");
+    background-size: 30%;
+    background-position: left 120px;
+    background-repeat: no-repeat;
+
+    background-color: rgba(0,0,0,0.6);
+    background-blend-mode: darken;
+
+    z-index: -1;
+    pointer-events: none;
+}
 
 /* HUVUDMENY  */
 
@@ -186,15 +222,22 @@
     color: #f77062;
 }
 
+/* ABOUT TEXT BOX */
+
 .about__container {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 40px auto;
+    padding: 30px;
+
     font-size: 1.2rem;
     line-height: 1.6;
+
+    color: white;
+
+    background: rgba(0, 0, 0, 0.65); /* mörk transparent box */
+    border-radius: 10px; /* rundade hörn */
+    backdrop-filter: blur(5px); /* modern "glass" effekt */
 }
-
-
 
 
 /* Services */
