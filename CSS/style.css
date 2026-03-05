@@ -1,16 +1,6 @@
 /* GRUNDINSTÄLLNINGAR */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Kumbh Sans", sans-serif;
-    
-}
-
-/* GRUNDINSTÄLLNINGAR */
-
-* {
     box-sizing: border-box; /* Gör att padding och border räknas in i elementets totala bredd/höjd */
     margin: 0; /* Tar bort standardmarginaler från webbläsaren */
     padding: 0; /* Tar bort standardpadding från webbläsaren */
@@ -23,151 +13,156 @@
 /* ABOUT PAGE BAKGRUND */
 
 body.about-page {
-    position: relative;
-    min-height: 100vh;
+    position: relative; /* Behövs för att ::before ska positioneras relativt till body */
+    min-height: 100vh; /* Ser till att sidan täcker hela skärmhöjden */
 }
 
 body.about-page::before {
-    content: "";
-    position: fixed;
-    inset: 0;
+    content: ""; /* Krävs för att pseudo-elementet ska visas */
+    position: fixed; /* Håller bakgrunden på plats vid scrollning */
+    inset: 0; /* Täcker hela skärmen (top/right/bottom/left: 0) */
 
     background-image: url("/images/undraw_visionary-technology_f6b3-Photoroom.png");
-    background-size: 30%;
-    background-position: left 120px;
-    background-repeat: no-repeat;
+    background-size: 30%; /* Bilden tar upp 30% av bredden */
+    background-position: left 120px; /* Placerar bilden till vänster med 120px avstånd uppifrån */
+    background-repeat: no-repeat; /* Förhindrar att bilden upprepas */
 
-    background-color: rgba(0,0,0,0.6);
-    background-blend-mode: darken;
+    background-color: rgba(0,0,0,0.6); /* Mörk halvtransparent slöja */
+    background-blend-mode: darken; /* Blandar bakgrundsfärg och bild för mörkare effekt */
 
-    z-index: -1;
-    pointer-events: none;
+    z-index: -1; /* Placerar bakgrunden bakom allt annat innehåll */
+    pointer-events: none; /* Förhindrar att pseudo-elementet blockerar klick */
 }
 
 /* About-knappen – liten och centrerad */
+
 .aboutButton {
-    text-align: center;   /* centrerar knappen */
-    margin: 30px 0;
+    text-align: center; /* Centrerar knappen horisontellt */
+    margin: 30px 0; /* Ger luft ovanför och nedanför knappen */
 }
 
 .aboutButton .button {
-    display: inline-block;      /* gör knappen kompakt, ej fullbredd */
-    padding: 8px 20px;          /* mindre höjd och bredd */
-    font-size: 1rem;            /* normal textstorlek */
-    border-radius: 5px;         /* rundade hörn */
-    background-color: #f77062;  /* matchande standardfärg */
-    color: #fff;
-    width: auto;                /* se till att bredden anpassas efter innehållet */
-    text-decoration: none;
-    transition: all 0.3s ease;
+    display: inline-block; /* Gör knappen kompakt, ej fullbredd */
+    padding: 8px 20px; /* Mindre höjd och bredd */
+    font-size: 1rem; /* Normal textstorlek */
+    border-radius: 5px; /* Rundade hörn */
+    background-color: #f77062; /* Matchande standardfärg */
+    color: #fff; /* Vit text */
+    width: auto; /* Bredden anpassas efter innehållet */
+    text-decoration: none; /* Tar bort understrykning */
+    transition: all 0.3s ease; /* Mjuk övergång vid hover */
 }
 
 /* Hover-effekt */
+
 .aboutButton .button:hover {
-    background-color: #ffb199; /* matchande ljusare ton */
+    background-color: #ffb199; 
     color: #fff;
-    transform: scale(1.05);
+    transform: scale(1.05); 
 }
 
-/* HUVUDMENY  */
-
+/* HUVUDMENY */
 
 .navbar {
-    background: #131313;
-    height: 80px;
+    background: #131313; 
+    height: 80px; 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;   /* 1 rem är lika med 16px, detta blir ca 19px  */
-    position: sticky;  /* Gör att navbaren stannar kvar på sin plats när scrollaer*/
-    top: 0;
-    z-index: 999; /* Gör att navbaren alltid ligger högts upp på skärmen */
+    justify-content: center; /* Centrerar innehållet horisontellt */
+    align-items: center; /* Centrerar innehållet vertikalt */
+    font-size: 1.2rem; /* 1rem = 16px, detta är ca 19px */
+    position: sticky; /* Navbaren stannar kvar vid scrollning */
+    top: 0; /* Fäster navbaren längst upp */
+    z-index: 999; /* Ser till att navbaren alltid ligger överst */
 }
 
 .navbar__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logga till vänster, meny till höger */
     height: 80px;
-    z-index: 1; /* Gör a navbaren allti ligger överst */
+    z-index: 1; /* Ser till att innehållet ligger ovanpå bakgrunden */
     width: 100%;
-    max-width: 1300px; /* Begränsar menyns maxbredd på störe skärmar */
-    margin: 0 auto;  /* 0 bestämmer uppe och nere, 'auto' sätter höger och vänster */
-    padding: 0 50px;
+    margin: 0 auto; /* Centrerar inehållet horisontellt */
+    padding: 0 50px; /* avståndet på sidorna */
 }
 
-.navbar__logo-img {
-    height: 50px;
-    width: auto;
-    margin-right: 10px;
-    vertical-align: middle;
-}
 
-#navbar__logo {  /* Hashtag "#" används för det är en ID och inte en klass */
-    background-size: 100%;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none; /* Tar bort understrykningen på länken */
-    font-size: 2rem;
-}  
-
+/* Navbaren / Länkarna */ 
 
 .navbar__menu {
-    display: flex; /* gör att menyns innehåll ligger i en rad */
-    align-items: center; /* Vertikal centrering av menyns innehåll */
-    list-style: none;  /* Tar bort punkterna från listan */
-    text-align: center; /* Centrerar texten i menyn */
-}
-
-.navbar__item {
-    height: 80px;
+    display: flex; /* Lägger länkarna i en rad */
+    align-items: center; /* lägger det vertikalt */
+    list-style: none; /* Tar bort punkterna från listan */
+    text-align: center; /* Centrerar texten */
 }
 
 .navbar__links {
-    color: #fff;
+    color: #fff; 
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
+    align-items: center; /* Centrerar texten vertikalt */
+    justify-content: center; /* Centrerar texten horisontellt */
+    text-decoration: none; /* Tar bort understrykning */
+    padding: 0 1rem; /* Ger horisontellt avstånd mellan länkarna */
+    height: 100%; 
 }
 
 .navbar__btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 1rem; 
     width: 100%;
 }
+
+
+
+/* Logan */
+
+.navbar__logo-img {
+    height: 50px; /* höjden på loggan */
+    width: auto; 
+    margin-right: 10px; /* Avstånd mellan logga och text */
+    vertical-align: middle; /* lägger loga icg ttext sida vid sida */
+}
+
+#navbar__logo { /* "#" används för att det är ett ID, inte en klass */
+    background-size: 100%;
+    display: flex;
+    align-items: center; /* Centrerar logga och text vertikalt */
+    cursor: pointer; /* Visar hand-cursor vid hover */
+    text-decoration: none; /* Tar bort understrykning på länken */
+    font-size: 2rem; /* Stor textstorlek för loggan */
+}
+
+
+
+/* Contact Us Knappen */
 
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;    /* Tar bort understrykningen på länken */
-    padding: 10px 20px;
+    text-decoration: none; /* tarbort understrykning på länken */
+    padding: 10px 20px; /* avstånd i knappen */
     height: 100%;
     width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: #f77062;
-    color: #fff;
+    border-radius: 4px; /* rundar kanterna något */
+    background: #f77062; 
+    color: #fff; 
 }
 
-.button:hover{
-    background: red;
-    transition: all 0.3s ease;
+.button:hover {
+    background: red; 
+    transition: all 0.3s ease; 
+    opacity: 0.5;
 }
 
 .navbar__links:hover {
-    color: #f77062;
-    transition: all 0.3s ease;
+    color: #f77062; 
+    transition: all 0.3s ease; 
 }
 
 
-/* Framsidan */
+/* FRAMSIDAN */
 
 .main {
     background-color: #141414;
@@ -175,34 +170,36 @@ body.about-page::before {
 
 .main__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* gör boxarna lika stora och sida vid sida */
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    height: 90vh;
+    margin: 0 auto; /* Centrerar containern */
+    height: 90vh; /* täcker 90% av skärmen */
     background-color: #141414;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
-    padding: 0 50px;
+    max-width: 1300px; /* maxbredd på stora skärmar */
+    padding: 0 50px; 
 }
 
 .main__content h1 {
-    font-size: 4rem;
-    background-color: #ff8177;
-    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    font-size: 4rem; 
+    background-color: #ff8177; 
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%); 
     background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    /* Sköter färgen på texten så den går från mörk till ljust.  */
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent; 
 }
 
 .main__content h2 {
     font-size: 4rem;
-    background-color: #ff8177;
-    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
+    background-color: #ff8177; 
+    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%); 
     background-size: 100%;
+    /* Sköter färgen på texten så den går från mörk till ljust */
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -210,75 +207,207 @@ body.about-page::before {
 }
 
 .main__content p {
-    margin-top: 1rem;
+    margin-top: 1rem; 
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 700; /* gör texten tjock */
     color: black;
 }
 
 .main__btn {
-    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-    padding: 14px 32px;
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%); 
+    padding: 14px 32px; /* storlek på knappen */
     border: none;
-    border-radius: 4px;
+    border-radius: 4px; /* rundar kanterna något */
     color: #fff;
     margin-top: 2rem;
     cursor: pointer;
-    position: relative;
-    transition: all 0.35s;
-    outline: none;
 }
 
 .main__btn a {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* gör länken klickbar ovanpå knappen */
     color: #fff;
-    text-decoration: none;
+    text-decoration: none; /* Tar bort understrykning */
 }
 
 
-/* About us */
+/* ABOUT US */
 
 .about {
     text-align: center;
     margin-top: 10px;
-    font-size: 2.5rem;
-    padding : 5px;
-    color: #f77062;
+    font-size: 2.5rem; 
+    padding: 5px;
+    color: #f77062; 
+    
 }
+
+
 
 /* ABOUT TEXT BOX */
 
 .about__container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
+    max-width: 800px; /* textboxens bredd */
+    margin: 20px auto; 
+    padding: 20px; 
 
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.6; /* avstånd mellan raderna */
 
     color: white;
 
-    background: rgba(0, 0, 0, 0.65); /* mörk transparent box */
-    border-radius: 10px; /* rundade hörn */
-    backdrop-filter: blur(5px); /* modern "glass" effekt */
+    background: rgba(0, 0, 0, 0.65); 
+    border-radius: 10px; /* rundar av kanterna något */
+    backdrop-filter: blur(5px); /* Modern "glas"-effekt */
 }
 
 
-/* Services */
 
 
-.services {
+/* GRUNDINSTÄLLNINGAR */
+
+* {
+    box-sizing: border-box; /* Gör att padding och border räknas in i elementets totala bredd/höjd */
+    margin: 0; /* Tar bort standardmarginaler från webbläsaren */
+    padding: 0; /* Tar bort standardpadding från webbläsaren */
+    font-family: "Kumbh Sans", sans-serif; /* Sätter standardfont för hela sidan */
+}
+
+/* HUVUDMENY */
+
+.navbar 
+{
+    background: #131313; 
+    height: 80px; 
+    display: flex;
+    justify-content: center; /* Centrerar innehållet horisontellt */
+    align-items: center; /* Centrerar innehållet vertikalt */
+    font-size: 1.2rem; /* 1rem = 16px, detta är ca 19px */
+    position: sticky; /* Navbaren stannar kvar vid scrollning */
+    top: 0; /* Fäster navbaren längst upp */
+    z-index: 999; /* Ser till att navbaren alltid ligger överst */
+}
+
+.navbar__container
+{
+    display: flex;
+    justify-content: space-between; /* Logga till vänster, meny till höger */
+    height: 80px;
+    z-index: 1; /* Ser till att innehållet ligger ovanpå bakgrunden */
+    width: 100%;
+    margin: 0 auto; /* Centrerar inehållet horisontellt */
+    padding: 0 50px; /* avståndet på sidorna */
+}
+
+
+/* Navbaren / Länkarna */ 
+
+.navbar__menu 
+{
+    display: flex; /* Lägger länkarna i en rad */
+    align-items: center; /* lägger det vertikalt */
+    list-style: none; /* Tar bort punkterna från listan */
+    text-align: center; /* Centrerar texten */
+}
+
+.navbar__links 
+{
+    color: #fff; 
+    display: flex;
+    align-items: center; /* Centrerar texten vertikalt */
+    justify-content: center; /* Centrerar texten horisontellt */
+    text-decoration: none; /* Tar bort understrykning */
+    padding: 0 1rem; /* Ger horisontellt avstånd mellan länkarna */
+    height: 100%;
+    white-space: nowrap; /* gör så "About us" inte staplas*/ 
+}
+
+.navbar__btn 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem; 
+    width: 100%;
+}
+
+
+
+/* Logan */
+
+.navbar__logo-img 
+{
+    height: 50px; /* höjden på loggan */
+    width: auto; 
+    margin-right: 10px; /* Avstånd mellan logga och text */
+    vertical-align: middle; /* lägger loga icg ttext sida vid sida */
+}
+
+#navbar__logo 
+{ /* "#" används för att det är ett ID, inte en klass */
+    background-size: 100%;
+    display: flex;
+    align-items: center; /* Centrerar logga och text vertikalt */
+    cursor: pointer; /* Visar hand-cursor vid hover */
+    text-decoration: none; /* Tar bort understrykning på länken */
+    font-size: 2rem; /* Stor textstorlek för loggan */
+}
+
+
+
+/* Contact Us Knappen */
+
+.button 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* tarbort understrykning på länken */
+    padding: 10px 20px; /* avstånd i knappen */
+    height: 100%;
+    width: 100%;
+    border-radius: 4px; /* rundar kanterna något */
+    background: #f77062; 
+    color: #fff; 
+}
+
+.button:hover 
+{
+    background: red; 
+    transition: all 0.3s ease; 
+}
+
+.navbar__links:hover 
+{
+    color: #f77062; 
+    transition: all 0.3s ease; 
+}
+
+
+/* Hover-effekt */
+
+.aboutButton .button:hover 
+{
+    background-color: #ffb199; 
+    color: #fff;
+    transform: scale(1.05); 
+}
+
+/* SERVICES */
+
+.services 
+{
     background: #141414;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    padding-top: 80px;
+    flex-direction: column; /* Staplar rubrik vertikalt */
+    align-items: center; /* Centrerar innehållet horisontellt */
+    height: 100vh; /* Täcker hela skärmhöjden */
+    padding-top: 80px; /* Ger luft under navbaren */
 }
 
-.services h1 {
-    background-color: #ff8177;
+.services h1 
+{
+    background-color: #ff8177; 
     background-image: linear-gradient(
         to right,
         #ff8177 0%,
@@ -287,260 +416,304 @@ body.about-page::before {
         #f99185 52%,
         #fbc490 78%,
         #fdbb7d 100%
-    );
+    ); 
     background-size: 100%;
     margin-bottom: 5rem;
-    font-size: 2.5rem;
-    -webkit-background-clip: text;
+    font-size: 2.5rem; 
+    /* Sköter färgen på texten så den går från mörk till ljust */
+    -webkit-background-clip: text; 
     -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent; 
 }
 
-.services__container {
+.services__container 
+{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
 
-.services__card {
-    margin: 1rem;
+.services__card 
+{
+    margin: 1rem; 
     height: 525px;
     width: 400px;
-    border-radius: 4px;
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(17, 17, 17, 17) 100%
-    ),
-    url(/images/TECH.gif);
-    background-size: cover;
-    position: relative;
-    color: #ffff;
+    border-radius: 4px; /* Rundar av kanterna lite */
+    background-image: url(/images/TECH.gif);
+    background-size: cover; /* Bilden täcker hela boxen */
+    position: relative; /* positionertar bilden / inehållet */
 }
 
-
-.services__card:nth-child(2) {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(17, 17, 17, 17) 100%
-    ),
-    url(/images/AI.gif);
+.services__card:nth-child(2) 
+{
+    background-image: url(/images/AI.gif); 
 }
 
-.services h2 {
+.services h2 
+{
     position: absolute;
-    top: 350px;
-    left: 30px;
+    top: 350px; 
+    left: 30px; 
 }
 
-.services__card p {
+.services__card p 
+{
     position: absolute;
     top: 400px;
     left: 30px;
 }
 
-.services__card button {
+.services__card button 
+{
     color: #fff;
     padding: 10px 20px;
     border: none;
     outline: none;
     border-radius: 4px;
-    background: #f77062;
+    background: #f77062; 
     position: absolute;
-    top: 450px;
+    top: 450px; 
     left: 30px;
-    font-size: 1rem;;
+    font-size: 1rem;
 }
 
-.services__card:hover {
-    transform: scale(1.075);
-    transition: 0.2s ease-in;
+.services__card:hover 
+{
+    transform: scale(1.075); 
+    transition: 0.2s ease-in; 
     cursor: pointer;
 }
 
 
-/* Footer */
+/* About knappen (längst ner på sidan) – liten och centrerad */
 
-.footer__container {
+.aboutButton 
+{
+    text-align: center; /* Centrerar knappen horisontellt */
+    margin: 30px 0; /* Ger luft ovanför och nedanför knappen */
+}
+
+.aboutButton .button 
+{
+    display: inline-block; /* Gör knappen kompakt, ej fullbredd */
+    padding: 8px 20px; /* Mindre höjd och bredd */
+    font-size: 1rem; /* Normal textstorlek */
+    border-radius: 5px; /* Rundade hörn */
+    background-color: #f77062; /* Matchande standardfärg */
+    color: #fff; /* Vit text */
+    width: auto; /* Bredden anpassas efter innehållet */
+    text-decoration: none; /* Tar bort understrykning */
+    transition: all 0.3s ease; /* Mjuk övergång vid hover */
+}
+
+
+
+/* FOOTER */
+
+.footer__container 
+{
     background-color: #141414;
-    padding: 5rem 0;
+    padding: 5rem 0; 
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Staplar loggan och länkar vertikalt */
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Centrerar allt horisontellt */
 }
 
-
-#footer__logo {
+#footer__logo 
+{
     display: flex;
     color: #fff;
     align-items: center;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: none; /* tr bort understrykning */
     font-size: 2rem;
-}
+} 
 
-.footer__links {
-    width: 100%;
-    max-width: 1000px;
+.footer__links 
+{
+    width: 100%; /* Tar upp full bredd */
+    max-width: 1000px; /* Begränsar maxbredd på stora skärmar */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* lägger länkboxen horisontellt */
 }
 
-.footer__link--wrapper {
+.footer__link--wrapper 
+{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 16px;
-    text-align: left;
-    width: 160px;
-    box-sizing: border-box;
+    flex-direction: column; /* Staplar länkarna vertikalt */
+    align-items: flex-start; /* lägger länkarna till vänster */
+    margin: 16px; 
+    text-align: left; 
+    width: 160px; 
+    box-sizing: border-box; /* Inkluderar padding och border i bredden */
 }
 
-.footer__link--items h2 {
-    margin-bottom: 16px;
+.footer__link--items h2 
+{
+    margin-bottom: 16px; /* Avstånd mellan rubrik och länkar */
 }
 
-.footer__link--items > h2 {
+.footer__link--items > h2 
+{
+    color: #fff; /* färg på rubriker */
+}
+
+.footer__link--items a 
+{
     color: #fff;
-}
-.footer__link--items a {
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 0.5rem;
+    text-decoration: none; /* taar bort understrykning */
+    margin-bottom: 0.5rem; /* Avstånd mellan länkarna */
 }
 
-.footer__link--items a:hover {
-    color: #e9e9e9;
-    transition: 0.3s ease-out;
+.footer__link--items a:hover 
+{
+    color: #e9e9e9; 
+    transition: 0.3s ease-out; 
 }
 
 
-footer {
-  text-align: center;
-  padding: 5px;
-  background-color: #131313;
-  color: white;
+footer 
+{
+    text-align: center;
+    padding: 5px; 
+    background-color: #131313; 
+    color: white;
 }
 
 
-
-
-
-/*  MOBILANPASSNING  */
+/* MOBILANPASSNING */
 
 @media screen and (max-width: 960px) {
-    .navbar__container {
-        display: flex;
-        justify-content: space-between;
-        height: 80px;
-        z-index: 1;
-        width: 100%;
-        max-width: 1300px;
-        padding: 0; /* tar bort paddinng på mobilversion */
-    }
+
+    /* Anpassning för navbar på tablets och mindre skärmar */
+    
+.navbar__container 
+{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0; /* Tar bort padding på mobilversion */
+}
 
     .navbar__menu {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: auto; /* lägger länkarna i colum */
         margin: 0;
         width: 100%;
-        position: absolute;
-        top: -1000px;
-        opacity: 0;
-        transition: all 0,5s ease;
-        height: 50vb;
-        z-index: -1;
+        position: absolute; /* lägger navbar utabfor skärmen när inte aktiv */
+        top: -1000px; /* döljer menyn ovanför skärmen */
+        opacity: 0; 
+        transition: all 0.5s ease; /* Mjuk övergång när menyn öppnas */
+        height: 50vh; /* halva skärm höjd  */
+        z-index: -1; /* ligger bakom när inte aktiv */
         background: #131313;
     }
 
-    /* Navigeringsmenyn från Javascriptet */
-    .navbar__menu.active {
-        background: #131313;
-        top: 100%;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 99;
-        height: 50vh;
-        font-size: 1.6rem;
+    /* Navigeringsmeny när den är aktiv (öppen) */
+.navbar__menu.active {
+    background: #131313;
+    top: 100%; 
+    opacity: 1; /* Gör så den blir synlig*/
+    transition: all 0.5s ease;
+    z-index: 99; /* Navbaren alltid överst */
+    height: 50vh;
+    font-size: 1.6rem;
+}
+
+#navbar__logo 
+{
+    font-size: 25px;
+}
+
+/* Styling för hamburger-menyns streck */
+
+.navbar__toggle .bar
+{
+    width: 25px;
+    height: 3px;
+    margin: 5px auto; /* Avstånd mellan strecken */
+    transition: all 0.3s ease-in-out; /* Skappar en  */
+    background: #fff;
+}
+
+.navbar__item 
+{
+    width: 100%; /* Full bred på mobil veresionen */
+}
+
+.navbar__links 
+{
+    text-align: center;
+    padding: 2rem; /* Avstånd mellan länkarna */
+    width: 100%;
+    display: table; /* Gör att länkarna staplas vertikalt */
+}
+
+
+/* Positionerar hamburger-ikonen till höger */
+#mobile-menu 
+{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
     }
 
+.navbar__btn 
+{
+    padding: 2rem;
+}
 
-    #navbar__logo {
-        font-size: 25px;
-    }
-
-
+.button 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+}
     
-    /* För "meny knappen" (hambuarger ikonen) */
-    .navbar__toggle .bar {
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background: #fff;
-    }
+/* Gör menyn synlog då den onsynlig standard verisionen*/
+.navbar__toggle .bar 
+{
+    display: block;
+    cursor: pointer;
+}
 
-    .navbar__item {
-        width: 100%;
-    }
+#mobile-menu.is-active .bar:nth-child(2) 
+{
+    opacity: 0;
+}
 
-    .navbar__links {
-        text-align: center;
-        padding: 2rem;
-        width: 100%;
-        display: table;
-    }
-    /* Posionerar den till höger */
-    #mobile-menu {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        transform: translate(5%, 20%);
-    }
+#mobile-menu.is-active .bar:nth-child(1) 
+{
+    transform: translateY(8px) rotate(45deg);
+}
 
-    .navbar__btn {
-        padding: 2rem;
-    }
-
-    .button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        height: 80px;
-        margin: 0;
-    }
-    /* Gör menyn synlog då den onsynlig standard verisionen*/
-    .navbar__toggle .bar {
-        display: block;
-        cursor: pointer;
-    }
-
-    #mobile-menu.is-active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    #mobile-menu.is-active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    #mobile-menu.is-active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
+#mobile-menu.is-active .bar:nth-child(3) 
+{
+    transform: translateY(-8px) rotate(-45deg);
+}
 }
 
 
 /* Responsiv design */
-@media (max-width: 600px) {
-    nav a {
-        display: block;
-        padding: 10px;
+@media (max-width: 600px) 
+{
+   nav a 
+   {
+    display: block;
+    padding: 10px;
     }
 
-    .contact-section {
+.contact-section 
+    {
         width: 90%;
         margin: 10px auto;
     }
@@ -553,7 +726,9 @@ footer {
 
 
 /* Placerar allt i nedre högra hörnet */
-#chat-wrapper {
+
+#chat-wrapper 
+{
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -562,7 +737,8 @@ footer {
 }
 
 /* Design för själva knappen */
-#chat-button {
+#chat-button 
+{
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -574,8 +750,11 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+
+
 /* Design för fönstret */
-#chat-window {
+#chat-window 
+{
     width: 300px;
     height: 400px;
     background: white;
@@ -586,7 +765,8 @@ footer {
     margin-bottom: 15px;
 }
 
-#chat-header {
+#chat-header 
+{
     background: #fe5196;
     color: white;
     padding: 10px;
@@ -595,7 +775,8 @@ footer {
     justify-content: space-between;
 }
 
-#chat-messages {
+#chat-messages 
+{
     flex: 1;
     padding: 10px;
     overflow-y: auto;

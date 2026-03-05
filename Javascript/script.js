@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
+    
     // Contact form validation
     const form = document.getElementById("contactForm");
     const successMessage = document.getElementById("successMessage");

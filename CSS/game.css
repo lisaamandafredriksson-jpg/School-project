@@ -1,0 +1,382 @@
+
+
+* 
+{
+    box-sizing: border-box; /* Gör att padding och border räknas in i elementets totala bredd/höjd */
+    margin: 0; /* Tar bort standardmarginaler från webbläsaren */
+    padding: 0; /* Tar bort standardpadding från webbläsaren */
+    font-family: "Kumbh Sans", sans-serif; /* Sätter standardfont för hela sidan */
+}
+
+
+
+/* HUVUDMENY */
+
+.navbar 
+{
+    background: #131313; 
+    height: 80px; 
+    display: flex;
+    justify-content: center; /* Centrerar innehållet horisontellt */
+    align-items: center; /* Centrerar innehållet vertikalt */
+    font-size: 1.2rem; /* 1rem = 16px, detta är ca 19px */
+    position: sticky; /* Navbaren stannar kvar vid scrollning */
+    top: 0; /* Fäster navbaren längst upp */
+    z-index: 999; /* Ser till att navbaren alltid ligger överst */
+}
+
+.navbar__container 
+{
+    display: flex;
+    justify-content: space-between; /* Logga till vänster, meny till höger */
+    height: 80px;
+    z-index: 1; /* Ser till att innehållet ligger ovanpå bakgrunden */
+    width: 100%;
+    margin: 0 auto; /* Centrerar inehållet horisontellt */
+    padding: 0 50px; /* avståndet på sidorna */
+}
+
+
+/* Navbaren / Länkarna */ 
+
+.navbar__menu 
+{
+    display: flex; /* Lägger länkarna i en rad */
+    align-items: center; /* lägger det vertikalt */
+    list-style: none; /* Tar bort punkterna från listan */
+    text-align: center; /* Centrerar texten */
+}
+
+.navbar__links 
+{
+    color: #fff; 
+    display: flex;
+    align-items: center; /* Centrerar texten vertikalt */
+    justify-content: center; /* Centrerar texten horisontellt */
+    text-decoration: none; /* Tar bort understrykning */
+    padding: 0 1rem; /* Ger horisontellt avstånd mellan länkarna */
+    height: 100%;
+    white-space: nowrap; /* gör så "About us" inte staplas*/ 
+}
+
+.navbar__btn 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem; 
+    width: 100%;
+}
+
+
+
+/* Logan */
+
+.navbar__logo-img 
+{
+    height: 50px; /* höjden på loggan */
+    width: auto; 
+    margin-right: 10px; /* Avstånd mellan logga och text */
+    vertical-align: middle; /* lägger loga icg ttext sida vid sida */
+}
+
+#navbar__logo 
+{ /* "#" används för att det är ett ID, inte en klass */
+    background-size: 100%;
+    display: flex;
+    align-items: center; /* Centrerar logga och text vertikalt */
+    cursor: pointer; /* Visar hand-cursor vid hover */
+    text-decoration: none; /* Tar bort understrykning på länken */
+    font-size: 2rem; /* Stor textstorlek för loggan */
+}
+
+
+
+
+/* Spel Boxarna*/
+
+.services 
+{
+    background: #141414;
+    display: flex;
+    width: 1000px;
+    color: red;
+    padding: 10px;
+    text-align: center;
+    flex-direction: column; /* Staplar rubrik vertikalt */
+    align-items: center; /* Centrerar innehållet horisontellt */
+}
+
+.services p
+{
+    color: purple;
+    padding: 20px;
+    margin-top: 5px;
+    text-align: center;
+    
+}
+
+.services__container 
+{
+    display: flex;
+    flex-wrap: wrap;          /* allow wrapping */
+    justify-content: center;
+}
+
+.services__card 
+{
+    height: 525px;
+    width: 400px;
+    border-radius: 4px; /* Rundar av kanterna lite */
+    background-size: cover; /* Bilden täcker hela boxen */
+}
+
+
+
+.services__card:hover 
+{
+    transform: scale(1.075); 
+    transition: 0.2s ease-in; 
+    cursor: pointer;
+}
+
+
+
+
+/* Contact Us Knappen */
+
+.button 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* tarbort understrykning på länken */
+    padding: 10px 20px; /* avstånd i knappen */
+    height: 100%;
+    width: 100%;
+    border-radius: 4px; /* rundar kanterna något */
+    background: #f77062; 
+    color: #fff; 
+}
+
+.button:hover 
+{
+    background: red; 
+    transition: all 0.3s ease; 
+}
+
+.navbar__links:hover 
+{
+    color: #f77062; 
+    transition: all 0.3s ease; 
+}
+
+
+
+
+
+/* FOOTER */
+
+.footer__container {
+    background-color: #141414;
+    padding: 5rem 0; 
+    display: flex;
+    flex-direction: column; /* Staplar loggan och länkar vertikalt */
+    justify-content: center;
+    align-items: center; /* Centrerar allt horisontellt */
+}
+
+#footer__logo 
+{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none; /* tr bort understrykning */
+    font-size: 2rem;
+} 
+
+.footer__links 
+{
+    width: 100%; /* Tar upp full bredd */
+    max-width: 1000px; /* Begränsar maxbredd på stora skärmar */
+    display: flex;
+    justify-content: center; /* lägger länkboxen horisontellt */
+}
+
+.footer__link--wrapper 
+{
+    display: flex;
+    flex-direction: column; /* Staplar länkarna vertikalt */
+    align-items: flex-start; /* lägger länkarna till vänster */
+    margin: 16px; 
+    text-align: left; 
+    width: 160px; 
+    box-sizing: border-box; /* Inkluderar padding och border i bredden */
+}
+
+.footer__link--items h2 
+{
+    margin-bottom: 16px; /* Avstånd mellan rubrik och länkar */
+}
+
+.footer__link--items > h2 
+{
+    color: #fff; /* färg på rubriker */
+}
+
+.footer__link--items a 
+{
+    color: #fff;
+    text-decoration: none; /* taar bort understrykning */
+    margin-bottom: 0.5rem; /* Avstånd mellan länkarna */
+}
+
+.footer__link--items a:hover 
+{
+    color: #e9e9e9; 
+    transition: 0.3s ease-out; 
+}
+
+
+footer 
+{
+    text-align: center;
+    padding: 5px; 
+    background-color: #131313; 
+    color: white;
+}
+
+
+/* MOBILANPASSNING */
+
+@media screen and (max-width: 960px) {
+
+/* Anpassning för navbar på tablets och mindre skärmar */
+.navbar__container 
+{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0; /* Tar bort padding på mobilversion */
+}
+
+.navbar__menu 
+{
+    display: grid;
+    grid-template-columns: auto; /* lägger länkarna i colum */
+    margin: 0;
+    width: 100%;
+    position: absolute; /* lägger navbar utabfor skärmen när inte aktiv */
+    top: -1000px; /* döljer menyn ovanför skärmen */
+    opacity: 0; 
+    transition: all 0.5s ease; /* Mjuk övergång när menyn öppnas */
+    height: 50vh; /* halva skärm höjd  */
+    z-index: -1; /* ligger bakom när inte aktiv */
+    background: #131313;
+}
+
+/* Navigeringsmeny när den är aktiv (öppen) */
+.navbar__menu.active 
+{
+    background: #131313;
+    top: 100%; 
+    opacity: 1; /* Gör så den blir synlig*/
+    transition: all 0.5s ease;
+    z-index: 99; /* Navbaren alltid överst */
+    height: 50vh;
+    font-size: 1.6rem;
+}
+
+#navbar__logo 
+{
+    font-size: 25px;
+}
+
+/* Styling för hamburger-menyns streck */
+
+.navbar__toggle .bar 
+{
+    width: 25px;
+    height: 3px;
+    margin: 5px auto; /* Avstånd mellan strecken */
+    transition: all 0.3s ease-in-out; /* Skappar en  */
+    background: #fff;
+}
+
+.navbar__item 
+{
+    width: 100%; /* Full bred på mobil veresionen */
+}
+
+.navbar__links 
+{
+    text-align: center;
+    padding: 2rem; /* Avstånd mellan länkarna */
+    width: 100%;
+    display: table; /* Gör att länkarna staplas vertikalt */
+}
+
+/* Positionerar hamburger-ikonen till höger */
+#mobile-menu 
+{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+}
+
+.navbar__btn 
+{
+    padding: 2rem;
+}
+
+.button 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+}
+
+/* Gör menyn synlog då den onsynlig standard verisionen*/
+.navbar__toggle .bar 
+{
+    display: block;
+    cursor: pointer;
+}
+
+#mobile-menu.is-active .bar:nth-child(2) 
+{
+    opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1) 
+{
+    transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu.is-active .bar:nth-child(3)
+{
+        transform: translateY(-8px) rotate(-45deg);
+}
+}
+
+
+/* Responsiv design */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        padding: 10px;
+    }
+
+    .contact-section {
+        width: 90%;
+        margin: 10px auto;
+    }
+}

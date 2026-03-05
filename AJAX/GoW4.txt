@@ -1,0 +1,7 @@
+<h2>Gears of War 4</h2>
+<p>Rad 1</p>
+<p>Rad 2</p>
+<p>Rad 3</p>
+<p>Rad 4</p>
+<p>Rad 5</p>
+<p>Rad 6</p>
