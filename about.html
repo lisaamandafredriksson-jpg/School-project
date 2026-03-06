@@ -2,52 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Gör sidan responsiv på mobil och surfplatta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Gör sidan responsiv på mobil och surfplatta -->
     <meta name="description" content="Vi utvecklar morgondagens teknologi redan idag. Innovativa lösningar inom AI, IT och digital utveckling.">
+    
+     <!-- Nyckelord för sökmotorer -->
     <meta name="keywords" content="teknologi, AI, innovation, IT, utveckling, framtidens teknik">
+    
     <meta name="author" content="Lisa & Geronimo">
+    
     <title>Morgondagens Teknologi | Innovativa Techlösningar</title>
     <link rel="stylesheet" href="/CSS/style.css">
+
+    <!-- Bootstrap CSS bibliotek för layout och design -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-       <!-- Navbar -->
-
-<nav class="navbar">
-     <div class="navbar__container">
-        <a href="/" id="navbar__logo">
+    <body class="about-page">
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
             <img src="/images/loga.png" alt="Logo" class="navbar__logo-img">Projekt (Grupparbete)</a>
-                <div class="navbar__toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-
-    <ul class="navbar__menu" id="nav-menu">
-
-        <li class="navbar__item">
-            <a href="/" class="navbar__links">Home</a>
-        </li>
-
-        <li class="navbar__item">
-            <a href="/products.html" class="navbar__links">Products</a>
-        </li>
-        
-        <li class="navbar__item">
-            <a href="/games.html" class="navbar__links">Games</a>
-        </li>
-
-        <li class="navbar__item">
-            <a href="/about.html" class="navbar__links">About Us</a>
-        
-        </li>
-        <li class="navbar__btn">
-            <a href="/contact.html" class="button">Contact Us</a>
-            
-        </li>
-    </ul>
-</nav>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu" id="nav-menu">
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/products.html" class="navbar__links">Products</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/about.html" class="navbar__links">About Us</a>
+            </li>
+            <li class="navbar__btn">
+                <a href="/contact.html" class="button">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
 
 <!-- Text boxarna -->
 
@@ -91,12 +89,16 @@
         <p>Vår vision är att vara en global ledare inom teknologisk innovation, och vi strävar efter att göra vår vision till verklighet genom att fortsätta skapa produkter och tjänster som förbättrar människors liv och driver samhället framåt. Vi ser fram emot att fortsätta vår resa mot en bättre framtid tillsammans med våra kunder, partners och samhällen.</p>
     </div>
 
+    <!-- Kontakt-knapp -->
     <div class="aboutButton">
+
+    <!-- Länk till kontakt-sidan -->
     <a href="/contact.html" class="button">Kontakta oss här</a>
 </div>
 </main>
 
-
+    
+    <script src="/Javascript/script.js"></script>
 
 <!-- Footer-->
 
@@ -110,11 +112,17 @@
 <!-- Chatbot -->
 
 <div id="chat-wrapper">
+
+     <!-- Chat-fönster -->
     <div id="chat-window" class="hidden">
+
         <div id="chat-header">
             <span>AI Assistent</span>
+
+            <!-- Stäng-knapp -->
             <button onclick="toggleChat()">❌</button>
         </div>
+        
         <div id="chat-messages">
             <p class="bot-msg">Hej! Hur kan jag hjälpa dig idag?</p>
         </div>
@@ -124,6 +132,7 @@
         </div>
     </div>
 
+    <!-- Knapp för att öppna chatten -->
     <button id="chat-button" onclick="toggleChat()">💬</button>
 </div>
 

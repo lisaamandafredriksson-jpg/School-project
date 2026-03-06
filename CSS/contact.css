@@ -1,114 +1,149 @@
 /* ==========================
    BASIC SETTINGS
 ========================== */
+
+/* Nollställer standardmarginal och padding i alla element */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Gör att padding och border räknas in i elementets storlek */
 }
 
+/* Grunddesign för hela sidan */
 body {
-    font-family: "Kumbh Sans", sans-serif;
-    background-color: #131313; /* dark mode default */
-    color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: "Kumbh Sans", sans-serif; /* Typsnitt */
+    background-color: #131313; /* Mörk bakgrund */
+    color: #fff; /* Vit text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Mjuk övergång vid färgändringar */
     position: relative;
 }
 
-/* Background image with dark overlay */
+
+/* ==========================
+   BACKGROUND IMAGE + OVERLAY
+========================== */
+
+/* Lägger en bakgrundsbild bakom hela sidan */
 body.contact-page::before {
-    content: "";
-    position: fixed;
+    content: ""; /* Krävs för pseudo-element */
+    position: fixed; /* Bilden ligger fast i bakgrunden */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/images/undraw_visionary-technology_f6b3-Photoroom.png');
-    background-size: 30%;
-    background-position: left 120px;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.6);
-    background-blend-mode: darken;
-    z-index: -1;
+    width: 100%; /* Täcker hela bredden */
+    height: 100%; /* Täcker hela höjden */
+    background-image: url('/images/undraw_visionary-technology_f6b3-Photoroom.png'); /* Bakgrundsbild */
+    background-size: 30%; /* Storlek på bilden */
+    background-position: left 120px; /* Position på sidan */
+    background-repeat: no-repeat; /* Bilden upprepas inte */
+    background-color: rgba(0, 0, 0, 0.6); /* Mörk overlay ovanpå bilden */
+    background-blend-mode: darken; /* Gör bilden mörkare */
+    z-index: -1; /* Lägger den bakom allt annat innehåll */
 }
+
+
 /* ==========================
    TOPBAR (HEADER + NAV)
 ========================== */
 
+/* Övre navigationsfält */
 .topbar {
-    background-color: #1e1e1e;
+    background-color: #1e1e1e; /* Mörk bakgrund */
     padding: 15px 0;
-    position: sticky;
+    position: sticky; /* Navbar följer med när man scrollar */
     top: 0;
-    z-index: 999;
+    z-index: 999; /* Gör att den ligger ovanpå andra element */
 }
 
+/* Container som håller navbarens innehåll centrerat */
 .topbar-container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin: 0 auto; /* Centrerar */
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Sprider ut innehållet */
+    align-items: center; /* Vertikal centrering */
 }
 
+/* Logotyp / titel */
 .logo {
     font-size: 2rem;
-    background-image: linear-gradient(90deg, #f77062, #fe5196);
-    -webkit-background-clip: text;
+    background-image: linear-gradient(90deg, #f77062, #fe5196); /* Gradient färg */
+    -webkit-background-clip: text; /* Gör gradienten till textfärg */
     -webkit-text-fill-color: transparent;
 }
 
-/* Desktop menu */
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+/* Desktop meny */
 .nav-menu {
-    display: flex;
-    gap: 20px;
+    display: flex; /* Lägger länkar i rad */
+    gap: 20px; /* Avstånd mellan länkar */
 }
 
+/* Länkar i navbaren */
 .nav-menu a {
     color: #fff;
-    text-decoration: none;
+    text-decoration: none; /* Tar bort understrykning */
     font-weight: bold;
 }
 
+/* Hover-effekt på länkar */
 .nav-menu a:hover {
     color: #f77062;
 }
 
-/* Hamburger */
+
+/* ==========================
+   HAMBURGER MENU
+========================== */
+
+/* Hamburger-ikon (mobilmeny) */
 .hamburger {
-    display: none;
+    display: none; /* Syns inte på desktop */
     font-size: 28px;
-    cursor: pointer;
+    cursor: pointer; /* Muspekaren blir klickbar */
     color: white;
 }
 
-/* Mobile */
+
+/* ==========================
+   MOBILE NAVIGATION
+========================== */
+
 @media (max-width: 768px) {
 
+    /* Mobilmeny */
     .nav-menu {
         position: absolute;
         top: 70px;
         right: 0;
         background-color: #1e1e1e;
-        flex-direction: column;
+        flex-direction: column; /* Länkarna staplas vertikalt */
         width: 200px;
         padding: 20px;
-        display: none;
+        display: none; /* Dölj menyn tills man klickar */
     }
 
+    /* När JavaScript lägger till "active" visas menyn */
     .nav-menu.active {
         display: flex;
     }
 
+    /* Hamburger visas bara på mobil */
     .hamburger {
         display: block;
     }
 }
 
+
 /* ==========================
    HEADER
 ========================== */
+
+/* Headersektion */
 header {
     background-color: #1e1e1e;
     padding: 20px;
@@ -117,6 +152,7 @@ header {
     border-radius: 8px;
 }
 
+/* Rubrik i header */
 header h1 {
     font-size: 2.5rem;
     background-image: linear-gradient(90deg, #f77062, #fe5196);
@@ -125,36 +161,16 @@ header h1 {
     font-weight: bold;
 }
 
-/* ==========================
-   NAVIGATION
-========================== */
-nav {
-    background-color: #1e1e1e;
-    text-align: center;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: inline-block;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #f77062;
-}
 
 /* ==========================
    CONTACT FORM
 ========================== */
+
+/* Container för kontaktformuläret */
 .contact-section {
     width: 65%;
     max-width: 600px;
-    margin: 40px auto;
+    margin: 40px auto; /* Centrerar sektionen */
     padding: 25px;
     text-align: center;
     background-color: #1e1e1e;
@@ -163,12 +179,14 @@ nav a:hover {
     color: #fff;
 }
 
+/* Form layout */
 .contact-form {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column; /* Fälten staplas vertikalt */
+    gap: 15px; /* Avstånd mellan fält */
 }
 
+/* Inputfält design */
 .contact-inputs {
     padding: 12px 15px;
     border-radius: 8px;
@@ -179,14 +197,17 @@ nav a:hover {
     color: #fff;
 }
 
+/* Placeholder text */
 .contact-inputs::placeholder {
     color: #ccc;
 }
 
+/* När inputfältet är aktivt */
 .contact-inputs:focus {
     border: 2px solid #f77062;
 }
 
+/* Skicka-knapp */
 .contact-form button {
     padding: 14px 25px;
     border: none;
@@ -198,62 +219,74 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
+/* Hover-effekt */
 .contact-form button:hover {
     opacity: 0.85;
 }
 
-/* Success message */
+/* Meddelande efter att formulär skickats */
 .success-message {
-    display: none;
+    display: none; /* Visas via JavaScript */
     margin-top: 15px;
     color: #21d4fd;
     font-weight: bold;
 }
 
+
 /* ==========================
-   FAQ
+   FAQ SECTION
 ========================== */
+
+/* FAQ container */
 .faq {
     width: 65%;
     margin: 40px auto;
 }
 
+/* Varje FAQ fråga */
 .faq-item {
     background-color: #1e1e1e;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: pointer; /* Visar att det är klickbart */
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     color: #fff;
 }
 
+/* FAQ rubrik */
 .faq-item h4 {
     color: #fff;
 }
 
+/* FAQ svar (göms först) */
 .faq-item p {
     display: none;
     margin-top: 10px;
     color: #ccc;
 }
 
+/* När JavaScript lägger till class "active" visas svaret */
 .faq-item.active p {
     display: block;
 }
 
+
 /* ==========================
-   MAP
+   MAP SECTION
 ========================== */
+
 .map-section {
     width: 65%;
     margin: 40px auto;
     text-align: center;
 }
 
+
 /* ==========================
    FOOTER
 ========================== */
+
 footer {
     background-color: #1e1e1e;
     color: #fff;
@@ -263,10 +296,14 @@ footer {
     border-radius: 8px;
 }
 
+
 /* ==========================
    RESPONSIVE DESIGN
 ========================== */
+
+/* Anpassning för surfplattor */
 @media (max-width: 960px) {
+
     body.contact-page::before {
         background-size: 50%;
         background-position: center 150px;
@@ -279,20 +316,26 @@ footer {
     }
 }
 
+/* Anpassning för små mobilskärmar */
 @media (max-width: 600px) {
+
     nav a {
         display: block;
         padding: 10px;
     }
 
+    /* Tar bort bakgrundsbilden på små skärmar */
     body.contact-page::before {
         background-image: none;
     }
 }
 
+
 /* ==========================
-   CHAT BOT
+   CHATBOT
 ========================== */
+
+/* Positionerar chatboten längst ner till höger */
 #chat-wrapper {
     position: fixed;
     bottom: 20px;
@@ -301,6 +344,7 @@ footer {
     z-index: 1000;
 }
 
+/* Chat-knapp */
 #chat-button {
     width: 60px;
     height: 60px;
@@ -313,6 +357,7 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* Själva chat-fönstret */
 #chat-window {
     width: 300px;
     height: 400px;
@@ -324,6 +369,7 @@ footer {
     margin-bottom: 15px;
 }
 
+/* Chat header */
 #chat-header {
     background: #fe5196;
     color: white;
@@ -333,6 +379,7 @@ footer {
     justify-content: space-between;
 }
 
+/* Chatmeddelanden */
 #chat-messages {
     flex: 1;
     padding: 10px;
@@ -342,7 +389,24 @@ footer {
     gap: 8px;
 }
 
-.bot-msg { background: #f1f1f1; padding: 8px; border-radius: 5px; align-self: flex-start; }
-.user-msg { background: #fe5196; color: white; padding: 8px; border-radius: 5px; align-self: flex-end; }
+/* Botens meddelanden */
+.bot-msg {
+    background: #f1f1f1;
+    padding: 8px;
+    border-radius: 5px;
+    align-self: flex-start;
+}
 
-.hidden { display: none !important; }
+/* Användarens meddelanden */
+.user-msg {
+    background: #fe5196;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    align-self: flex-end;
+}
+
+/* Klass som döljer element (används av JavaScript) */
+.hidden {
+    display: none !important;
+}

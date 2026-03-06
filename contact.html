@@ -1,73 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vi utvecklar morgondagens teknologi redan idag. Innovativa lösningar inom AI, IT och digital utveckling.">
-    <meta name="keywords" content="teknologi, AI, innovation, IT, utveckling, framtidens teknik">
-    <meta name="author" content="Lisa & Geronimo">
-    <title>Kontakta oss | Morgondagens Teknologi | Innovativa Techlösningar</title>
+<!DOCTYPE html> <!-- Talar om för webbläsaren att detta är en HTML5 sida -->
 
-    <!-- CSS -->
+<html lang="en"> <!-- Starten på hela HTML-dokumentet, språket är engelska -->
+<head> <!-- Head innehåller metadata, länkar till CSS, titel osv (syns inte på sidan) -->
+
+    <meta charset="UTF-8"> <!-- Gör att alla tecken (å ä ö osv) fungerar korrekt -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- Gör sidan responsiv så den fungerar på mobil och surfplatta -->
+
+    <meta name="description" content="Vi utvecklar morgondagens teknologi redan idag. Innovativa lösningar inom AI, IT och digital utveckling.">
+    <!-- Kort beskrivning av sidan för sökmotorer (SEO) -->
+
+    <meta name="keywords" content="teknologi, AI, innovation, IT, utveckling, framtidens teknik">
+    <!-- Nyckelord som hjälper sökmotorer att förstå vad sidan handlar om -->
+
+    <meta name="author" content="Lisa & Geronimo">
+    <!-- Visar vem som skapat sidan -->
+
+    <title>Kontakta oss | Morgondagens Teknologi | Innovativa Techlösningar</title>
+    <!-- Titeln som visas i webbläsarens flik -->
+
+    <!-- Kopplar CSS-filen som innehåller designen för kontaktsidan -->
     <link rel="stylesheet" href="CSS/contact.css">
 
-    <!-- Bootstrap (optional for layout) -->
+    <!-- Importerar Bootstrap (ett färdigt CSS-bibliotek för layout och styling) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
+
+
 <body class="contact-page dark-mode">
+<!-- Body innehåller allt som syns på sidan -->
+<!-- Klassen contact-page används ofta för sidspecifik styling -->
+<!-- Klassen dark-mode används för mörkt tema -->
+
+
 
 <!-- Nav Bar -->
 
-<div class="topbar">
-    <div class="topbar-container">
-        <h1 class="logo">Contact Us</h1>
 
+<!-- NAVBAR / TOPBAR -->
+<div class="topbar"> <!-- Hela navigationsfältet högst upp -->
+
+    <!-- Container som håller navbarens innehåll centrerat -->
+    <div class="topbar-container">
+
+        <!-- Sidans logotyp / titel -->
+        <h1 class="logo">Contact Us</h1> <!-- Rubrik/logotyp i navbaren -->
+
+        <!-- Hamburger meny som visas på mobil -->
         <div class="hamburger" id="hamburger">
-            ☰
+            ☰ <!-- Symbolen för mobilmeny -->
         </div>
 
+        <!-- Navigationsmeny med länkar till andra sidor -->
         <nav class="nav-menu" id="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
+
+            <a href="index.html">Home</a> <!-- Länk till startsidan -->
+
+            <a href="products.html">Products</a> <!-- Länk till produktsidan -->
+
+            <a href="about.html">About Us</a> <!-- Länk till about sidan -->
+
+            <a href="contact.html">Contact</a> <!-- Länk till kontaktsidan -->
+
         </nav>
+
     </div>
 </div>
 
-<!-- Contact Form Section -->
+
+
+<!-- CONTACT FORM SECTION -->
 <section class="contact-section">
+<!-- Sektion som innehåller kontaktformuläret -->
+
+    <!-- Kort text som förklarar formuläret -->
     <p>Fill in the form below and we'll get back to you!</p>
 
+    <!-- Formulär som skickar data till Web3Forms API -->
     <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+    <!-- action = var formulärdata skickas -->
+    <!-- method POST = skickar data säkert -->
+    <!-- id används av JavaScript -->
+
+        <!-- API-nyckel som gör att Web3Forms vet vilket konto formuläret tillhör -->
         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+        <!-- hidden betyder att användaren inte ser detta fält -->
 
+        <!-- Textfält där användaren skriver sitt namn -->
         <input type="text" name="name" placeholder="Name" class="contact-inputs" required>
-        <input type="email" name="email" placeholder="Email" class="contact-inputs" required>
-        <textarea name="message" placeholder="Message (minimum 10 characters)" class="contact-inputs" required></textarea>
+        <!-- required betyder att fältet måste fyllas i -->
 
+        <!-- Emailfält med inbyggd email-validering -->
+        <input type="email" name="email" placeholder="Email" class="contact-inputs" required>
+        <!-- type="email" kontrollerar att en giltig email skrivs -->
+
+        <!-- Större textfält där användaren skriver sitt meddelande -->
+        <textarea name="message" placeholder="Message (minimum 10 characters)" class="contact-inputs" required></textarea>
+        <!-- textarea används för längre text -->
+
+        <!-- Knapp som skickar formuläret -->
         <button type="submit">Send</button>
+        <!-- submit gör att formuläret skickas -->
+
     </form>
 
-    <p id="successMessage" class="success-message">Thank you! Your message has been sent 🎉</p>
+    <!-- Meddelande som visas när formuläret skickats -->
+    <p id="successMessage" class="success-message">
+        Thank you! Your message has been sent 🎉
+    </p>
+    <!-- Denna visas ofta via JavaScript efter skickat formulär -->
+
 </section>
 
-<!-- FAQ Section -->
+
+
+<!-- FAQ SECTION -->
 <section class="faq">
+<!-- FAQ = Frequently Asked Questions -->
+
+    <!-- Rubrik för FAQ -->
     <h2>Frequently Asked Questions</h2>
+
+    <!-- En fråga -->
     <div class="faq-item">
-        <h4>How long is your response time?</h4>
+
+        <h4>How long is your response time?</h4> <!-- Fråga -->
+
+        <!-- Svaret (visas när man klickar via JavaScript) -->
         <p>We respond within 24 hours.</p>
+
     </div>
+
+    <!-- En till fråga -->
     <div class="faq-item">
-        <h4>Where are you located?</h4>
-        <p>We are based in Sweden.</p>
+
+        <h4>Where are you located?</h4> <!-- Fråga -->
+
+        <p>We are based in Sweden.</p> <!-- Svar -->
+
     </div>
+
 </section>
 
-<!-- Google Maps Section -->
+
+
+<!-- GOOGLE MAPS SECTION -->
 <section class="map-section">
+<!-- Sektion som visar företagets plats -->
+
+    <!-- Rubrik -->
     <h2>Find Us</h2>
+
+    <!-- Google Maps inbäddad karta -->
     <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18..." 
         width="100%" 
@@ -76,32 +162,78 @@
         allowfullscreen="" 
         loading="lazy">
     </iframe>
+    <!-- iframe används för att bädda in extern content som Google Maps -->
+    <!-- width 100% gör att kartan fyller hela sektionen -->
+    <!-- loading lazy gör att kartan laddas först när den syns -->
+
 </section>
 
+
+
+<!-- FOOTER -->
 <footer>
+<!-- Sidans nederdel -->
+
+    <!-- Copyright text -->
     <p>&copy; 2026 Website. All rights reserved.</p>
+
 </footer>
 
-<!-- Chatbot -->
+
+
+<!-- CHATBOT -->
 <div id="chat-wrapper">
+<!-- Wrapper som håller hela chatbot-komponenten -->
+
+    <!-- Själva chatfönstret -->
     <div id="chat-window" class="hidden">
+    <!-- hidden betyder att chatten är dold från början -->
+
+        <!-- Chat header -->
         <div id="chat-header">
+
+            <!-- Titel -->
             <span>AI Assistent</span>
+
+            <!-- Knapp som stänger chatten -->
             <button onclick="toggleChat()">❌</button>
+            <!-- onclick kör JavaScript-funktionen toggleChat() -->
+
         </div>
+
+        <!-- Här visas alla chatmeddelanden -->
         <div id="chat-messages">
+
+            <!-- Första botmeddelandet -->
             <p class="bot-msg">Hej! Hur kan jag hjälpa dig idag?</p>
+
         </div>
+
+        <!-- Inputfält där användaren skriver -->
         <div id="chat-input-area">
+
             <input type="text" id="user-input" placeholder="Skriv något...">
+            <!-- Här skriver användaren sitt meddelande -->
+
+            <!-- Skicka meddelande -->
             <button type="button" class="btn btn-outline-danger">Send</button>
+            <!-- Bootstrap knappstil -->
+
         </div>
+
     </div>
 
+    <!-- Knapp som öppnar chatten -->
     <button id="chat-button" onclick="toggleChat()">💬</button>
+    <!-- När man klickar öppnas/stängs chatten -->
+
 </div>
 
-<!-- JS -->
+
+
+<!-- Kopplar JavaScript filen som innehåller funktioner -->
 <script src="Javascript/script.js"></script>
+<!-- Scriptet hanterar t.ex. chatbot, meny och interaktioner -->
+
 </body>
 </html>
