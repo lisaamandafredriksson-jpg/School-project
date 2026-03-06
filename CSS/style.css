@@ -170,15 +170,10 @@ body.about-page::before {
 
 .main__container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* gör boxarna lika stora och sida vid sida */
     align-items: center;
     justify-content: center;
     margin: 0 auto; /* Centrerar containern */
-    height: 90vh; /* täcker 90% av skärmen */
     background-color: #141414;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px; /* maxbredd på stora skärmar */
     padding: 0 50px; 
 }
 
@@ -210,7 +205,7 @@ body.about-page::before {
     margin-top: 1rem; 
     font-size: 2rem;
     font-weight: 700; /* gör texten tjock */
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .main__btn {

@@ -190,6 +190,7 @@ if (menu) {
         menu.classList.toggle('is-active');
 
         // Visar eller gömmer menyraden
+        
         menuLinks.classList.toggle('active');
     });
 }
